@@ -1,0 +1,8 @@
+RegisterNetEvent('lootdrop:startOpening')
+AddEventHandler('lootdrop:startOpening', function()
+    local playerPed = PlayerPedId()
+    FreezeEntityPosition(playerPed, true)
+    exports['progressBars']:startUI(180000, "Öffnet Lootbox...")
+    Citizen.Wait(180000)
+    FreezeEntityPosition(playerPed, false)
+end)
